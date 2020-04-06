@@ -7,15 +7,19 @@ public class CameraMove : MonoBehaviour
     private Camera mainCamera;
     public float followSpeed = 10;
     public float zoomSpeed = 10.0f;
-    
+    public bool move;
     void Start()
     {
+       //move = true;
         mainCamera = GetComponent<Camera>();
     }
     void Update()
     {
-        moveObject();
-        Zoom();
+        if (move)
+        {
+            moveObject();
+            Zoom();
+        }
         
     }
     private void Zoom()
